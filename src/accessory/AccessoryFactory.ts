@@ -34,6 +34,7 @@ import TemperatureHumidityIRSensorAccessory from './TemperatureHumidityIRSensorA
 import CameraAccessory from './CameraAccessory';
 import SceneAccessory from './SceneAccessory';
 import AirConditionerAccessory from './AirConditionerAccessory';
+import KettleAccessory from './experimental/KettleAccessory';
 
 
 export default class AccessoryFactory {
@@ -159,6 +160,9 @@ export default class AccessoryFactory {
         break;
       case 'scene':
         handler = new SceneAccessory(platform, accessory);
+        break;
+      case 'bh':
+        handler = new KettleAccessory(platform, accessory);
         break;
     }
 
